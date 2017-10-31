@@ -1,14 +1,30 @@
 <template lang="html">
   <div>
    <div class="chat-composer">
-    <input type="text" placeholder="Start typing..."> 
-    <button class="btn btn-primary">Send</button> 
-   </div>    
+    <input type="text" placeholder="Start typing..." v-model="messageText" @keyup.enter="sendMessage"> 
+    <button class="btn btn-primary" @click="sendMessage">Send</button> 
+   </div>   
   </div> 
 </template>
 <script>
   export default {
- 
+    data() {
+      return {
+        messageText: ''
+      }
+    },
+    methods: {
+      sendMessage() {
+        // emit uses whatever string you pass as the first parameter as the event rective trigger
+          this.$emit('messagesent', {
+            message: this.messageText,
+            author: "John Doe",
+          });
+        console.log(this.messageText);
+        this.messageText = "";
+      }
+    }
+
   }
 </script>
 <style lang="css">

@@ -1,19 +1,14 @@
 <template lang="html">
   <div class="chat-message">
     <div>
-      <p>{{ message }}</p>
-      <small>{{ user }}</small>
+      <p>{{ message.message }}</p>
+      <small>{{ message.user }}</small>
     </div>
   </div>
 </template>
 <script>
   export default {
-    data() {
-        return {
-            message: "This is some message text",
-            user: "John Doe",
-        }
-    }
+    props: ['message']
   }
 </script>
 <style lang="css">
