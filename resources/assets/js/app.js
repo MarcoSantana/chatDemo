@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -21,25 +20,24 @@ Vue.component('chat-log', require('./components/ChatLog.vue'));
 Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-            messages: [
-              {
-                id: 1,
-                message: 'Hola',
-                user: "John Doe"
-              },
-              {
-                id: 2,
-                message: 'Hallo',
-                user: "Jane Doe"
-              }
-            ]
-    },
-    methods: {
-        addMessage(message) {
-            // console.log('message added!!');
-           this.messages.push(message) ;
-        }
+  el: '#app',
+  data: {
+    messages: [{
+        id: 1,
+        message: 'Hola',
+        user: "John Doe"
+      },
+      {
+        id: 2,
+        message: 'Hallo',
+        user: "Jane Doe"
+      }
+    ]
+  },
+  methods: {
+    addMessage(message) {
+      console.log('message added!!');
+      this.messages.push(message);
     }
+  }
 });

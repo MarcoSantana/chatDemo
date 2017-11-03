@@ -1382,7 +1382,6 @@ module.exports = __webpack_require__(60);
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -1418,8 +1417,9 @@ var app = new Vue({
     }]
   },
   methods: {
-    addMessage: function addMessage() {
+    addMessage: function addMessage(message) {
       console.log('message added!!');
+      this.messages.push(message);
     }
   }
 });
@@ -31317,7 +31317,7 @@ module.exports.default = axios;
 /*!
  * Determine if an object is a Buffer
  *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */
 
@@ -43317,7 +43317,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43336,28 +43336,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 //Stardate 95432.5
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['messages']
+  props: ["messages"]
 });
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "chat-log" },
-    _vm._l(_vm.messages, function(message) {
-      return _c("chat-message", { attrs: { message: message } })
-    })
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function(){},staticRenderFns:[]}
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
@@ -43484,7 +43470,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // emit uses whatever string you pass as the first parameter as the event rective trigger
       this.$emit('messagesent', {
         message: this.messageText,
-        author: "John Doe"
+        user: "John Doe"
       });
       console.log(this.messageText);
       this.messageText = "";
