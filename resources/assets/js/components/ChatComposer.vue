@@ -18,7 +18,7 @@
         // emit uses whatever string you pass as the first parameter as the event rective trigger
           this.$emit('messagesent', {
             message: this.messageText,
-            author: "John Doe",
+            user: "John Doe",
           });
         console.log(this.messageText);
         this.messageText = "";

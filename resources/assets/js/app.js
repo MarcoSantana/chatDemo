@@ -37,8 +37,9 @@ const app = new Vue({
             ]
     },
     methods: {
-        addMessage() {
-            console.log('message added!!');
+        addMessage(message) {
+            // console.log('message added!!');
+           this.messages.push(message) ;
         }
     }
 });
