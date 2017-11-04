@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -21,6 +20,7 @@ Vue.component('chat-log', require('./components/ChatLog.vue'));
 Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 
 const app = new Vue({
+<<<<<<< HEAD
     el: '#app',
     data: {
             messages: []
@@ -37,4 +37,5 @@ const app = new Vue({
         this.messages = response.data;
       })
     }
+  }
 });
