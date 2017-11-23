@@ -14,7 +14,7 @@ export default {
 </script>
 <style lang="css">
   .empty {
-    padding: 1em;
+    padding: 1rem;
     text-align: center;
   }
 </style>

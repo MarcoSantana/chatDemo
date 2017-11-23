@@ -18,7 +18,9 @@
         // emit uses whatever string you pass as the first parameter as the event rective trigger
           this.$emit('messagesent', {
             message: this.messageText,
-            auth_user: "",
+            user: { 
+              name: $('#app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li > a').text()
+            }
           });
         // console.log(this.messageText);
         this.messageText = "";

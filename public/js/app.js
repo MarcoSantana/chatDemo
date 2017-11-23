@@ -1411,7 +1411,10 @@ var app = new Vue({
   methods: {
     addMessage: function addMessage(message) {
       // console.log('message added!!');
+      //Add to existing messages
       this.messages.push(message);
+
+      //Persist to the database
     }
   },
   created: function created() {
@@ -31318,7 +31321,7 @@ module.exports.default = axios;
 /*!
  * Determine if an object is a Buffer
  *
- * @author   Feross Aboukhadijeh <https://feross.org>
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
  */
 
@@ -43318,7 +43321,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.empty {\n  padding: 1em;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.empty {\n  padding: 1rem;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -43507,7 +43510,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // emit uses whatever string you pass as the first parameter as the event rective trigger
       this.$emit('messagesent', {
         message: this.messageText,
-        auth_user: ""
+        user: {
+          name: $('#app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li > a').text()
+        }
       });
       // console.log(this.messageText);
       this.messageText = "";
