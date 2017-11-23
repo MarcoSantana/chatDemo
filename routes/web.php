@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MessagePosted;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +35,10 @@ Route::post('/messages', function () {
       'message' => request()->get('message')
     ]);
 
+    //This was for a simple respose
     return ['status' => 'OK'];
+    // Announce that a new message has been posted
+    event(new MessagePosted());
 })->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
