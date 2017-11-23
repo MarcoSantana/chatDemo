@@ -39,7 +39,10 @@ const app = new Vue({
       axios.get('/messages').then(response => {
         // console.log(response);
         this.messages = response.data;
-      })
+      });
+
+      //https://youtu.be/iiBcOKYxd0Q?t=499
+      // Echo.channel
     }
   }
 );

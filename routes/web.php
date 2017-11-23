@@ -31,14 +31,14 @@ Route::post('/messages', function () {
     //Store the new message
     $user = Auth::user();
 
-    $user->messages()->create([
+    $message = $user->messages()->create([
       'message' => request()->get('message')
     ]);
 
     //This was for a simple respose
-    return ['status' => 'OK'];
+    //return ['status' => 'OK'];
     // Announce that a new message has been posted
-    event(new MessagePosted());
+    event(new MessagePosted($message, $user));
 })->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
