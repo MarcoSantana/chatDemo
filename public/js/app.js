@@ -1418,7 +1418,8 @@ var app = new Vue({
     var _this = this;
 
     //do something after creating vue instance
-    axios.get('messages').then(function (response) {
+    axios.get('/messages').then(function (response) {
+      // console.log(response);
       _this.messages = response.data;
     });
   }
@@ -43216,7 +43217,7 @@ var render = function() {
     _c("div", [
       _c("p", [_vm._v(_vm._s(_vm.message.message))]),
       _vm._v(" "),
-      _c("small", [_vm._v(_vm._s(_vm.message.user))])
+      _c("small", [_vm._v(_vm._s(_vm.message.user.name))])
     ])
   ])
 }
@@ -43317,7 +43318,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.empty {\n  padding: 1em;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -43328,6 +43329,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -43350,9 +43354,28 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "chat-log" },
-    _vm._l(_vm.messages, function(message) {
-      return _c("chat-message", { attrs: { message: message } })
-    })
+    [
+      _vm._l(_vm.messages, function(message) {
+        return _c("chat-message", { attrs: { message: message } })
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.messages.length === 0,
+              expression: "messages.length === 0"
+            }
+          ],
+          staticClass: "empty"
+        },
+        [_vm._v("\n    No messages yet Sorry...\n  ")]
+      )
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -43484,9 +43507,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // emit uses whatever string you pass as the first parameter as the event rective trigger
       this.$emit('messagesent', {
         message: this.messageText,
-        user: "John Doe"
+        auth_user: ""
       });
-      console.log(this.messageText);
+      // console.log(this.messageText);
       this.messageText = "";
     }
   }

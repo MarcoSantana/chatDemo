@@ -32,7 +32,8 @@ const app = new Vue({
     },
     created() {
       //do something after creating vue instance
-      axios.get('messages').then(response => {
+      axios.get('/messages').then(response => {
+        // console.log(response);
         this.messages = response.data;
       })
     }
