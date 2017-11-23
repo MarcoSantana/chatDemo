@@ -1415,6 +1415,7 @@ var app = new Vue({
       this.messages.push(message);
 
       //Persist to the database
+      axios.post('/messages', message);
     }
   },
   created: function created() {
@@ -31321,7 +31322,7 @@ module.exports.default = axios;
 /*!
  * Determine if an object is a Buffer
  *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */
 

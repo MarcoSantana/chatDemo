@@ -31,6 +31,7 @@ const app = new Vue({
            this.messages.push(message) ;
 
            //Persist to the database
+           axios.post('/messages', message);
         }
     },
     created() {
